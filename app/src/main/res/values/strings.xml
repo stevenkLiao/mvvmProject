@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">mvvmProject</string>
+    <string name="mvvmTitle">MVVM架構實驗</string>
+
+</resources>
