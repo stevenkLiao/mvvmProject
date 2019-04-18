@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+    <data class=".ActivityMainBinding">
         <variable
-            name="testObject"
-            type="com.example.stevenliao.mvvmproject.model.TestObject" />
+            name="TestObjectA"
+            type="com.example.stevenliao.mvvmproject.model.TestObjectA" />
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -15,57 +15,112 @@
         tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="84dp"
-            android:text="MVVM架構測試"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-        <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@{testObject.testTxt1}"
+            android:text="MVVM架構測試-A畫面"
             android:textSize="30sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
+            android:id="@+id/editText1"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@{testObject.testTxt1}"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toStartOf="@+id/title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/title_tv" />
 
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="@{TestObjectA.testTxt1}"
+            app:layout_constraintStart_toStartOf="@+id/title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="@{testObject.testTxt2}"
-            app:layout_constraintStart_toStartOf="@+id/editText"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            android:layout_marginStart="24dp"
+            android:text="@{TestObjectA.testTxt2}"
+            app:layout_constraintStart_toEndOf="@+id/textView1"
+            app:layout_constraintTop_toTopOf="@+id/textView1" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@{TestObjectA.testTxt3}"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@{TestObjectA.testTxt4}"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/editText2"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="8dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@{testObject.testTxt2}"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintStart_toEndOf="@+id/editText1"
+            app:layout_constraintTop_toTopOf="@+id/editText1" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toEndOf="@+id/editText2"
+            app:layout_constraintTop_toTopOf="@+id/editText2" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/editText1"
+            app:layout_constraintTop_toBottomOf="@+id/editText1" />
+
 
     </android.support.constraint.ConstraintLayout>
 </layout>
