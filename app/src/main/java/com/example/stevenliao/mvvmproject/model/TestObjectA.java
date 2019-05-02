@@ -1,7 +1,10 @@
 package com.example.stevenliao.mvvmproject.model;
 
+import android.content.Context;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+
+import com.example.stevenliao.mvvmproject.utils.KikiUtil;
 
 public class TestObjectA extends BaseObservable {
     private final String testTxt1;
@@ -15,6 +18,14 @@ public class TestObjectA extends BaseObservable {
         this.testTxt3 = testTxt3;
         this.testTxt4 = testTxt4;
     }
+
+//    public String getTestObjectAFromSP(Context ctx) {
+//        return KikiUtil.getStringPreferences(ctx, KikiUtil.TestObjectA);
+//    }
+//
+//    public static void saveTestObjectAToSP(Context ctx, String TestObjectA) {
+//        KikiUtil.savePreferences(ctx, KikiUtil.TestObjectA, TestObjectA);
+//    }
 
     @Bindable
     public String getTestTxt1() {
