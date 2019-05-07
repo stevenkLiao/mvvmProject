@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.example.stevenliao.mvvmproject.model.TestObjectA;
 import com.example.stevenliao.mvvmproject.viewModel.MainViewModel;
+import com.example.stevenliao.mvvmproject.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -19,19 +20,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
 
         final ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //利用ViewModel把按鈕按下去所需邏輯歸納成一個method
-                mainViewModel.saveData(MainActivity.this);
-            }
-        });
+        mainViewModel.setActivityMainBinding(binding);
+
+        binding.button.setOnClickListener(this);
+        binding.button2.setOnClickListener(this);
 
     }
 
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button:
+                mainViewModel.saveData(MainActivity.this);
+                break;
 
+            case R.id.button2:
+                mainViewModel.reFresh(MainActivity.this);
+                break;
+        }
     }
 }

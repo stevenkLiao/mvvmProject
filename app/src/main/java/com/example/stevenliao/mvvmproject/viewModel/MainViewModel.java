@@ -17,6 +17,7 @@ public class MainViewModel {
         this.activityMainBinding = activityMainBinding;
     }
 
+    //將所有
     public void saveData(Context ctx) {
         //測試將editText存入sharePreference
         KikiUtil.savePreferences(ctx, KikiUtil.TestObjectAOne, activityMainBinding.editText1.getText().toString());
